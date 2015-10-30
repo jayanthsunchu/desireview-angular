@@ -1,0 +1,23 @@
+﻿<div>
+    <div class="form-controls">
+        <form ng-submit="changePassword()" name="resetpassword">
+            <table class="table borderless">
+                <tr><td>
+                        <input type="password" ng-model="changePasswordObject.Password" ng-minlength="6" required placeholder="Enter New Password" class="form-control" />
+                   </td></tr>
+                <tr><td>
+                        <input type="password" ng-model="ConfirmPassword" ng-minlength="6" required ng-model-options="{ debounce: 1000 }" ng-change="compare()" placeholder="Confirm New Password" class="form-control" />        
+                    </td></tr>
+                <tr><td>
+                    <span class="errorlabel" ng-show="showflag">Passwords don't match</span>
+                        <span class="errorlabel" ng-show="resetpassword.$error.minlength">Minimum length is 6.</span>
+                    </td></tr>
+                <tr><td>
+                        <button class="btn btn-success" ng-disabled="resetpassword.$invalid" type="submit">Change Password</button>        
+                    </td></tr>
+            </table>
+            
+            
+        </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="normalsubheading">
+	<h2>Contact Page</h2>
+</div>
+<div class="row">
+	<form name="contactform" ng-submit="submitContact()" novalidate>
+		<table class="table borderless">
+			<tr>
+				<td>
+					<input type="text" class="form-control" required ng-model="contact.Name" placeholder="Your Name">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="email" class="form-control" required ng-model="contact.Email" placeholder="Your Email">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="tel" class="form-control" required ng-model="contact.Number" placeholder="Your Phone Number">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea rows="10" class="form-control" required ng-model="contact.Comment" placeholder="Your Comment"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="errorlabel" ng-show="contactform.$error.required">All fields are required<br /></span>
+					<span class="errorlabel" ng-show="contactform.$error.email">Email not valid<br /></span>
+					<span ng-show="showflag">Your request has been submitted. Thank You.<br /></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button type="submit" ng-disabled="contactform.$invalid" class="btn btn-success">Submit</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>

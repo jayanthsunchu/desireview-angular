@@ -1,0 +1,43 @@
+<div>
+    <div class="row search">
+        <label class="form-controls-label">Select Language:</label>
+        <select class="form-control" ng-options="option for option in listOfOptions"
+                ng-model="selectedItem"
+                ng-change="selectedItemChanged()"
+                ng-init="selectedItem = selectedItem || listOfOptions[0]"></select>
+        <button ng-click="makeDefaultOption()" class="btn btn-success makedefault">Make This Default</button>
+    </div>
+    <div class="progress progress-striped active" data-ng-show="isBusy">
+        <div class="progress-bar progress-bar-success bar"></div>
+    </div>
+    <div class="row movies">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3" ng-repeat="i in data.selectedmovies">
+            <div class="card" ng-click="go('/moviereview/' + i.Title, i.Title)">
+                <img ng-src="{{i.ImageName}}" class="my-img-thumbnail" />
+                <div class="details">
+                    <h4>{{i.Title}}</h4>
+                    <p><span>Cast</span>: {{i.Cast}}</p>
+                    <hr />
+                    <div class="details ratingclass">
+                        <p><span>1st Show's Rating</span></p>
+                        <div class="desi">
+                            <span ng-class="{spantrue : i.DesiReviewRating >= 5}">☆</span>
+                            <span ng-class="{spantrue : i.DesiReviewRating >= 4}">☆</span>
+                            <span ng-class="{spantrue : i.DesiReviewRating >= 3}">☆</span>
+                            <span ng-class="{spantrue : i.DesiReviewRating >= 2}">☆</span>
+                            <span ng-class="{spantrue : i.DesiReviewRating >= 1}">☆</span>
+                        </div>
+                        <p><span>Your Rating</span></p>
+                        <div class="rating">
+                            <span ng-click="addRating(5, i.Id)" ng-class="{spantrue : i.UserRating >= 5}">☆</span>
+                            <span ng-click="addRating(4, i.Id)" ng-class="{spantrue : i.UserRating >= 4}">☆</span>
+                            <span ng-click="addRating(3, i.Id)" ng-class="{spantrue : i.UserRating >= 3}">☆</span>
+                            <span ng-click="addRating(2, i.Id)" ng-class="{spantrue : i.UserRating >= 2}">☆</span>
+                            <span ng-click="addRating(1, i.Id)" ng-class="{spantrue : i.UserRating >= 1}">☆</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

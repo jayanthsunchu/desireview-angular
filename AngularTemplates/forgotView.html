@@ -1,0 +1,24 @@
+﻿<div>
+    <div class="form-controls">
+        <form ng-submit="sendResetLink()" name="sendlink" novalidate>
+            <table class="table borderless">
+                <tr>
+                    <td>
+                        <input type="email" ng-model="emailObject.Email" placeholder="Email Address" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">
+                        <span class="errorlabel" ng-show="sendlink.$error.email">Not a valid email address!</span>
+                        <span ng-show="successflag">Please check your email!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Send Reset Link" class="btn btn-success" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

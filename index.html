@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html data-ng-app="desireview">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - 1st Show Response</title>
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+
+</head>
+
+<body>
+    <div class="body-content">
+        <div class="container-fluid">
+            <div class="row-fluid logo">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 logo-image">
+                            <a href="#/"><img src="/Images/logo.png" /></a>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-2 userinfo">
+                        </div>
+                        <div class="col-sm-1 userinfo">
+                        </div>
+
+                        <div class="col-sm-4 userinfo">
+                            <table class="table borderless">
+                                <tr>
+                                    <td>
+                                        <a href="#/profile" id="myProfileLink">My Profile</a>
+                                        <a href="#/loginorregister" id="logInLink">Login/Register</a>
+                                    </td>
+                                    <td>
+                                        <a href="#/contact">Contact</a>
+                                    </td>
+                                    <td>
+                                        <a href="#/" id="logOutLink" onclick="RemoveCookies();">Log Out</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+
+
+            <div data-ng-view=""></div>
+
+
+        </div>
+    </div>
+    <footer class="desi-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>&copy; 2015 - 1st Show Response</p>
+                </div>
+                <div class="col-sm-8">
+                    <p><span>Designed and Developed By Wormhol3</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-cookies.min.js"></script>
+    <script src="/Scripts/angular-route.min.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/respond.js"></script>
+    <script src="/AngularJS/home-index.js"></script>
+</body>
+
+</html>

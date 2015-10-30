@@ -1,0 +1,97 @@
+﻿
+<div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-controls">
+                <form ng-submit="logIn()" name="loginform" novalidate>
+                    <table class="table borderless">
+                        <tr>
+                            <td>
+                                <input type="text" ng-model="existingUser.UserName"
+                                       required placeholder="User Name" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" name="password" placeholder="Password" ng-model="existingUser.Password" required class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="rememberme"
+                                               ng-true-value="'YES'" ng-false-value="'NO'"> Remember Me
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center">
+                                <span class="errorlabel" ng-show="showerror">Invalid Username/Password.</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="submit" class="btn btn-success" ng-disabled="loginform.$invalid" value="Login" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#/forgotpassword" class="forgot">Forgot Password?</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-6 login-border">
+            <div class="form-controls">
+                <form ng-submit="registerUser()" name="registerform" role="form" novalidate>
+                    <table class="table borderless">
+                        
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="User Name" required ng-model="newUser.UserName" ng-model-options="{ debounce: 1000 }" ng-change="checkUserName()" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" placeholder="Password" ng-minlength="6" required ng-model="newUser.Password" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" placeholder="Confirm Password" ng-minlength="6" required ng-model="ConfirmPassword" ng-change="compareToPassword()" ng-model-options="{ debounce: 1000 }" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="email" placeholder="Email" ng-model="newUser.Email" required class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center">
+                                <span class="errorlabel" ng-hide="loginServiceResponse.userNameAvailable.flag">Username Not Available<br /></span>
+                                <span ng-show="changepasswordflag" class="errorlabel">Passwords don't match.<br /></span>
+                                <span class="errorlabel" ng-show="registerform.$error.required">All fields are required<br /></span>
+                                <span class="errorlabel" ng-show="registerform.$error.email">Email not valid<br /></span>
+                                <span class="errorlabel" ng-show="registerform.$error.minlength">Minimum length for Password is 6 characters.<br /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" class="btn btn-success" value="Register" ng-disabled="registerform.$invalid" />
+                            </td>
+                        </tr>
+                       
+                    </table>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
